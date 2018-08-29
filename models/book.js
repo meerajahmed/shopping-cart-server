@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const UserSchema = new mongoose.Schema({
+const BookSchema = new mongoose.Schema({
   imagePath: {
     type: String,
     require: true
@@ -21,6 +21,10 @@ const UserSchema = new mongoose.Schema({
     type: Number,
     require: true
   },
+  category: {
+    type: String,
+    require: true
+  },
   author: {
     type: String,
     require: true
@@ -31,6 +35,6 @@ const UserSchema = new mongoose.Schema({
   }
 });
 
-const Product = mongoose.model('Product', UserSchema);
+const Book = mongoose.model('Book', BookSchema);
 
-module.exports = {Product};
+module.exports = {Book};
