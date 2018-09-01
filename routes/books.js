@@ -1,13 +1,12 @@
-var express = require('express');
-var router = express.Router();
-var {Product} = require('../models/product');
+const express = require('express');
+const router = express.Router();
+const {Book} = require('../models/book');
 
 /* GET home page. */
 router.get('/', function (req, res) {
-  res.render('index', {title: 'Express'});
-  Product.find({})
-    .then((products) => {
-      res.send(products);
+  Book.find({})
+    .then((books) => {
+      res.send(books);
     })
     .catch((e) => {
       res.status(400).send(e);
